@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react'
 import axios from 'axios'
 
-const categoriasContext = createContext()
+const CategoriasContext = createContext()
 
 const CategoriasProvider = ({children}) => {
   const [categorias, setCategorias] = useState([])
@@ -22,13 +22,13 @@ const CategoriasProvider = ({children}) => {
   },[])
 
   return(
-    <categoriasContext.Provider
+    <CategoriasContext.Provider
       value={{
         categorias
       }}
     >
       {children}
-    </categoriasContext.Provider>
+    </CategoriasContext.Provider>
   )
 }
 
@@ -36,4 +36,4 @@ export {
   CategoriasProvider
 }
 
-export default categoriasContext
+export default CategoriasContext
