@@ -8,7 +8,7 @@ const BebidasProvider = ({children}) => {
 
   const consultarBebida = async datos => {
     try {
-      const url = `http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${datos.nombre}&c=${datos.categoria}`
+      const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${datos.nombre}&c=${datos.categoria}`
       const { data } = await axios(url)
       // console.log(data)
       setBebidas(data.drinks)
