@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import categoriasContext from '../context/CategoriasProvider'
+import CategoriasContext from '../context/CategoriasProvider'
 
 const useCategorias = () => {
-  const context = useContext(categoriasContext)
+  const context = useContext(CategoriasContext)
 
   if(!context) {
     throw new Error('useCategorias must be used within a CategoriasProvider')
