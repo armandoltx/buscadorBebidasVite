@@ -1,6 +1,10 @@
 import React from 'react';
 import { Button, Form, Row, Col } from 'react-bootstrap'
+import useCategorias from '../hools/useCategorias';
+
 const Formulario = () => {
+  const { categorias } = useCategorias()
+
   return (
     <Form>
       <Row>
@@ -23,8 +27,27 @@ const Formulario = () => {
               name="categoria"
             >
               <option value="">-- Selecciona Categoria --</option>
+              {categorias.map(categoria => (
+                <option
+                  value=""
+                  key={categoria.strCategory}
+                  value={categoria.strCategory}
+                >
+                  {categoria.strCategory}
+                </option>
+              ))}
             </Form.Select>
           </Form.Group>
+        </Col>
+      </Row>
+      <Row className='justify-content-end'>
+        <Col md={3}>
+                <Button
+                  variant='danger'
+                  className='text-uppercase w-100'
+                >
+                  Buscar Bebidas
+                </Button>
         </Col>
       </Row>
     </Form>
